@@ -1,0 +1,28 @@
+p, ul {
+  margin: 0 0 0 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Hind Siliguri', sans-serif;
+  font-size: 16px;
+  margin-top: 0;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+html {
+  box-sizing: border-box;
+
+}
+
+*, *::before, *::after {
+  outline-color: #65B0E1;
+  box-sizing: inherit;
+}
+
+@media only screen and (max-width: 840px) {
+  body {
+    background-color: #fff;
+  }
+}
