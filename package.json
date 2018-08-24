@@ -1,7 +1,8 @@
 {
   "name": "cracowhotelsmap",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "homepage": "https://marcindbar.github.io/cracowhotelsapp/",
   "dependencies": {
     "google-maps-react": "^2.0.2",
     "react": "^16.4.2",

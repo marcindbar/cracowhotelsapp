@@ -9,7 +9,7 @@ The application shows map where you can search (by hotel name or category) for h
 * Download or clone the project
 * Install dependencies with `npm install`
 * Start the server with `npm start`
-* Live version is available at [cracow-hotels-map](https://marcindbar.github.io/cracowhotelsmap/). 
+* Live version is available at [cracow-hotels-map](https://marcindbar.github.io/cracowhotelsapp/). 
 
 ### Dependencies
 * [create-react-app](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md), [google-maps-react](https://github.com/fullstackreact/google-maps-react)
