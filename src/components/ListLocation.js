@@ -6,10 +6,12 @@ const Locations = props => {
   return (
     <ul>
       {props.locationsFiltered.map(item => (
-        <ListElement key={item.venue.id}
+        <ListElement
+          key={item.venue.id}
           clickListEl={props.clickListEl}
           onClickListEl={props.onClickListEl}
-          name={item.venue.name} />
+          name={item.venue.name}
+        />
       ))}
     </ul>
   );

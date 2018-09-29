@@ -9,7 +9,6 @@ import ErrorMessage from './components/ErrorMessage';
 
 
 class App extends Component {
-
   allMarkers = [];
   state = {
     locationsFiltered: [],
@@ -24,12 +23,11 @@ class App extends Component {
   };
 
   componentDidMount() {
-
     fetch(
       'https://api.foursquare.com/v2/venues/explore?ll=50.061703,19.937394&categoryId=4bf58dd8d48988d1fa931735&checkin=intent&radius=6000&limit=120&client_id=U0GLS0ZVSGFMQD1YFNPWO054PKPNCDNUY1XT13XG1TNXKQZK&client_secret=ABOKXZIF3ZB3T2TXXSO1VENGN1Z2LVLERFWDE4RSQF0MWVXZ&v=20180819'
     ).then(response => response.json())
      .then(response => {
-        const apiResponse = response.response.groups[0].items;
+       const apiResponse = response.response.groups[0].items;
         this.setState({
           locations: apiResponse,
           locationsFiltered: apiResponse
@@ -37,16 +35,20 @@ class App extends Component {
       })
       .catch(error => {
         console.log(error);
-        this.setState({ error: true });
+        this.setState({error: true});
       });
 
     // google maps - handle errors
     window.gm_authFailure = () => this.setState({ error: true });
-    if (window.google === undefined) { this.setState({ error: true }); }
+    if (window.google === undefined) {
+      this.setState({error: true});
+    }
   }
 
   addMarker = marker => {
-    if (marker) {this.allMarkers.push(marker);}
+    if (marker) {
+      this.allMarkers.push(marker);
+    }
   };
 
   onClickMap = () => {
@@ -57,7 +59,9 @@ class App extends Component {
   };
 
   onClickListEl = e => {
-    const clicked = this.allMarkers.filter(el => el.marker.name === e.target.textContent);
+    const clicked = this.allMarkers.filter(
+      el => el.marker.name === e.target.textContent
+    );
     this.setState({
       clickedMarker: clicked[0].marker,
       animation: 0,
@@ -98,16 +102,17 @@ class App extends Component {
 
   // handle the enter pressing
   clickListEl = el => {
-    if (el.keyCode === 13) { el.target.click(); }
-    else if (this.state.showInfoWindow) {
-      this.setState({ animation: 0, showInfoWindow: false });
+    if (el.keyCode === 13) {
+      el.target.click();
+    } else if (this.state.showInfoWindow) {
+      this.setState({
+        animation: 0,
+        showInfoWindow: false
+      });
     }
   };
 
-  menuToggle = () => {
-    if (this.state.menuOpen) { this.setState({ menuOpen: false }); }
-    else { this.setState({ menuOpen: true }); }
-  };
+  menuToggle = () => this.setState({menuOpen: !this.state.menuOpen});
 
   render() {
     return (
@@ -124,20 +129,26 @@ class App extends Component {
               {
                 this.state.menuOpen && (
                 <aside className='sidebar'>
-                  <SearchEngine query={this.state.query}
-                    onHotelSearch={this.onHotelSearch} />
-                  <Locations clickListEl={this.clickListEl}
+                  <SearchEngine
+                    query={this.state.query}
+                    onHotelSearch={this.onHotelSearch}
+                  />
+                  <Locations
+                    clickListEl={this.clickListEl}
                     locationsFiltered={this.state.locationsFiltered}
-                    onClickListEl={this.onClickListEl} />
+                    onClickListEl={this.onClickListEl}
+                  />
                 </aside>)
               }
               <div className='map' role='application'>
-                <MainMap appState={this.state}
+                <MainMap
+                  appState={this.state}
                   google={window.google}
                   addMarker={this.addMarker}
                   onCloseInfoWindow={this.onCloseInfoWindow}
                   onClickMarker={this.onClickMarker}
-                  onClickMap={this.onClickMap} />
+                  onClickMap={this.onClickMap}
+                />
               </div>
             </div>
         )}
