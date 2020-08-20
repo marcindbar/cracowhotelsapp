@@ -1,0 +1,6 @@
+build/
+public/
+README.md
+.prettierrc.yaml
+package-lock.json
+package.json

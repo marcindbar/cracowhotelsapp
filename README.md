@@ -16,3 +16,7 @@ The application shows map where you can search (by hotel name or category) for h
 * I used icons from [Flaticon](https://www.flaticon.com/)
 * Data comes from [Foursquare API](https://developer.foursquare.com/)
 * Maps are from [Google Maps API](https://cloud.google.com/maps-platform/)
+
+### Code formatting
+Run `npx prettier --write .` to format the code.
+Run `npx prettier --check .` to check if there is something to format.
