@@ -4,7 +4,7 @@ import * as icons from '../Icons'
 
 const iconImages = icons.icons[0]
 
-class MainMap extends Component {
+class CityMap extends Component {
     addCategory = () => {
         const chosenLocation = this.props.appState.locationsFiltered.filter(
             (el) => el.venue.name === this.props.appState.clickedMarker.name
@@ -28,8 +28,7 @@ class MainMap extends Component {
     }
 
     isAnimated = (selectedMarker) => {
-        return this.props.appState.clickedMarker.name ===
-            selectedMarker.venue.name
+        return this.props.appState.clickedMarker.name === selectedMarker.venue.name
             ? this.props.appState.animation
             : null
     }
@@ -74,17 +73,13 @@ class MainMap extends Component {
                         <h1 className='info-window-title'>
                             {this.props.appState.clickedMarker.name}
                         </h1>
-                        <div className='info-window-category'>
-                            category: {this.addCategory()}
-                        </div>
+                        <div className='info-window-category'>category: {this.addCategory()}</div>
                         <p
                             className='info-window-icon'
                             style={{backgroundImage: `${this.addIcon()}`}}
                         />
                         address:
-                        <p className='info-window-details'>
-                            {this.getAddress()}
-                        </p>
+                        <p className='info-window-details'>{this.getAddress()}</p>
                     </div>
                 </InfoWindow>
             </Map>
@@ -92,4 +87,4 @@ class MainMap extends Component {
     }
 }
 
-export default MainMap
+export default CityMap
