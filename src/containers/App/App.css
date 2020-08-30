@@ -132,19 +132,6 @@
     background-color: #fff;
 }
 
-.api-failed {
-    height: calc(100vh - 160px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.8em;
-}
-
-.api-failed-message {
-    padding: 6px 21px;
-    color: #555;
-}
-
 @media only screen and (max-width: 850px) {
     .App {
         margin: 0;
@@ -163,15 +150,6 @@
     .footer {
         right: 0;
         bottom: 0;
-    }
-
-    .api-failed {
-        min-height: calc(100vh - 160px);
-        font-size: 1.5em;
-    }
-
-    .api-failed-message {
-        color: #555;
     }
 }
 

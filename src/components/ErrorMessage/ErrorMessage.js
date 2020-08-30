@@ -1,6 +1,7 @@
 import React from 'react'
+import './ErrorMessage.css'
 
-const ErrorMessage = () => {
+const errorMessage = () => {
     return (
         <div className='api-failed'>
             <p className='api-failed-message'>Sorry, we tried but the data can not be loaded.</p>
@@ -8,4 +9,4 @@ const ErrorMessage = () => {
     )
 }
 
-export default ErrorMessage
+export default errorMessage

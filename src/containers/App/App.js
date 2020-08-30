@@ -4,8 +4,8 @@ import './App.css'
 import CityMap from '../../components/CityMap'
 import SearchEngine from '../../components/SearchEngine'
 import Locations from '../../components/ListLocation'
-import MenuButton from '../../components/menuButton/menuButton'
-import ErrorMessage from '../../components/ErrorMessage'
+import MenuButton from '../../components/MenuButton/MenuButton'
+import ErrorMessage from '../../components/ErrorMessage/ErrorMessage'
 import {API_URL} from '../../settings/constanstants'
 
 class App extends Component {

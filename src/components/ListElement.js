@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ListElement = (props) => {
+const listElement = (props) => {
     return (
         <li
             className='list-el'
@@ -15,4 +15,4 @@ const ListElement = (props) => {
     )
 }
 
-export default ListElement
+export default listElement
