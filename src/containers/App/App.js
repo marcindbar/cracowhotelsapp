@@ -4,7 +4,7 @@ import './App.css'
 import CityMap from '../../components/CityMap'
 import SearchEngine from '../../components/SearchEngine'
 import Locations from '../../components/ListLocation'
-import Button from '../../components/Button'
+import MenuButton from '../../components/menuButton/menuButton'
 import ErrorMessage from '../../components/ErrorMessage'
 import {API_URL} from '../../settings/constanstants'
 
@@ -114,7 +114,7 @@ class App extends Component {
     render() {
         const header = (
             <header className='header'>
-                <Button menuToggle={this.citiesMenuToggle} />
+                <MenuButton menuToggle={this.citiesMenuToggle} />
                 <h1 className='header-text'>Hotels in Cracow</h1>
             </header>
         )

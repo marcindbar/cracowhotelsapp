@@ -1,6 +1,8 @@
 import React from 'react'
+import './menuButton.css'
 
-const Button = (props) => {
+
+const menuButton = (props) => {
     return (
         <button
             onClick={props.menuToggle}
@@ -11,4 +13,4 @@ const Button = (props) => {
     )
 }
 
-export default Button
+export default menuButton
